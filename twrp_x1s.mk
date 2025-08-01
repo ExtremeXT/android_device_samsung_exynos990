@@ -36,7 +36,7 @@ PRODUCT_MODEL := $(shell echo $(PRODUCT_BRAND) | tr  '[:lower:]' '[:upper:]')_$(
 PRODUCT_MANUFACTURER := $(PRODUCT_BRAND)
 
 # Default device path for tree
-DEVICE_PATH := device/$(PRODUCT_BRAND)/$(PRODUCT_DEVICE)
+DEVICE_PATH := device/$(PRODUCT_BRAND)/$(PRODUCT_PLATFORM)
 
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/$(PRODUCT_BRAND)/$(PRODUCT_DEVICE)/device.mk)
+$(call inherit-product, device/$(PRODUCT_BRAND)/$(PRODUCT_PLATFORM)/$(PRODUCT_DEVICE)/device.mk)
