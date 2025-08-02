@@ -1,33 +1,25 @@
-# TWRP Device Tree for Samsung Galaxy S20 Series
-
-The Galaxy S20 Series (codenamed _"x1s"_,_"y2s"_,_"z3s"_) is a family of flagship smartphones from Samsung.
-
-They were announced and released in March 2020.
-
-This device tree is compatible with all 5 devices: S20 4G, S20 5G, S20+ 4G, S20+ 5G, S20 Ultra.
+# TWRP Device Tree for Samsung Galaxy devices with Exynos 990
 
 ## Device specifications
 
-| Feature                      | Specification                                                                      |
-| ---------------------------: | :----------------------------------------------------------------------------------|
-| Chipset                      | Exynos 990/9830                                                                    |
-| CPU                          | Octa-core (2x2.73 GHz Mongoose M5 & 2x2.50 GHz Cortex-A76 & 4x2.0 GHz Cortex-A55)  |
-| GPU                          | Mali-G77 MP11                                                                      |
-| Memory                       | 8GB/12GB/16GB RAM                                                                  |
-| Shipped OS                   | Android 10 (One UI 2.0)                                                            |
-| Storage                      | 128GB / 256GB / 512GB (UFS 3.0)                                                    |
+| Branding Name                          | Model Number          | Internal Codename   |
+| :------------------------------------- | :-------------------- | :------------------ |
+| Samsung Galaxy S20 (4G/5G)             | SM-G980F / SM-G981B   | x1s                 |
+| Samsung Galaxy S20+ (4G/5G)            | SM-G985F / SM-G986B   | y2s                 |
+| Samsung Galaxy S20 Ultra (5G)          | SM-G988B              | z3s                 |
+| Samsung Galaxy S20 FE (4G)             | SM-G780F              | r8s                 |
+| Samsung Galaxy Note20 (4G/5G)          | SM-N980F / SM-N981B   | c1s                 |
+| Samsung Galaxy Note20 Ultra (4G/5G)    | SM-N985F / SM-N986B   | c2s                 |
 
 ## Kernel source 
 
-Available at [https://github.com/ExtremeXT/android_kernel_samsung_990/](https://github.com/ExtremeXT/android_kernel_samsung_990)
+Available at [https://github.com/ExtremeXT/990_upstream_v2/](https://github.com/ExtremeXT/990_upstream_v2)
+
+* Note: The kernel has been compiled with the --recovery flag set to y.
 
 ## Bugs
 
-- ADB when MTP is disabled
-- /data decryption in OneUI (works on AOSP)
-
-## FBE Decryption
-The default branch has FBE disabled because it's only functional on AOSP, for that version, please visit [the decryption branch](https://github.com/ExtremeXT/android_device_samsung_x1s/tree/decryption).
+- /data decryption
 
 ## How to build
 
@@ -38,7 +30,7 @@ This device tree was tested and is fully compatible with [minimal-manifest-twrp]
 2. In the root folder of the fetched repo, clone the device tree:
 
 ```bash
-git clone https://github.com/ExtremeXT/android_device_samsung_x1s.git -b android-12.1 device/samsung/x1s
+git clone https://github.com/ExtremeXT/android_device_samsung_exynos990.git -b android-12.1 device/samsung/exynos990
 ```
 
 3. To build:
